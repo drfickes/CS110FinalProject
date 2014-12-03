@@ -18,13 +18,13 @@ public class Deck extends CardPile
       
       }
       
-      shuffle();
+     shuffle();
    
    }
    
    public void shuffle()
    {
-      for (int i = 0; i < 2000; i++)
+      for (int i = 0; i < 10000; i++)
       {
       Random rand = new Random();
       int randNum = rand.nextInt(52);

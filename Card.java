@@ -109,4 +109,57 @@ public class Card
          return false;
       }
    }
+   
+   public String getImage()
+   {
+      String suitName;
+      //converts the suit number to a string
+      if (suit == 1)
+      {
+         suitName = "s";
+      }
+      else if (suit == 2)
+      {
+         suitName = "c";
+      }
+      else if (suit == 3)
+      {
+         suitName = "h";
+      }
+      else
+      {
+         suitName = "d";
+      } 
+   
+      String rankName;
+      //converts the rank to a face value if applicable
+      if (rank == 1)
+      {
+         rankName = "ace";
+      }
+      
+      else if (rank == 11)
+      {
+         rankName = "jack";
+      }
+   
+      else if (rank == 12)
+      {
+         rankName = "queen";
+      }
+      
+      else if (rank == 13)
+      {
+         rankName = "king";
+      }
+      
+      else
+      {
+         //if not a face value, convert numerical rank to a string
+         rankName = Integer.toString(rank);
+      }
+      
+      //return the name as a string
+      return (suitName + rankName);
+   }
 }
