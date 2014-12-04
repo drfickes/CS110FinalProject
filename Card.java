@@ -1,27 +1,46 @@
 /*
 David Fickes
 CS 110
-the Card class creates a card with both a numerical value and a suit.
-Also contains the methods getSuit, getRank, toString, and equals(otherCard:Card).
+*/
+
+/**
+Holds basic information of a card. Contains relevant 
+getters and setters.
 */
 
 public class Card
 {
    //assign each suit to an integer
+   /**A constant that represents an integer value for the suit*/
    public static int SPADES = 1;
+   /**A constant that represents an integer value for the suit*/
    public static int CLUBS = 2;
+   /**A constant that represents an integer value for the suit*/
    public static int HEARTS = 3;
+   /**A constant that represents an integer value for the suit*/
    public static int DIAMONDS = 4;
    //assign the face cards a numerical value
+   /**A constant that represents an integer value for the rank*/
    public static int ACE = 1;
+   /**A constant that represents an integer value for the rank*/
    public static int JACK = 11;
+   /**A constant that represents an integer value for the rank*/
    public static int QUEEN = 12;
+   /**A constant that represents an integer value for the rank*/
    public static int KING = 13;
+   /**A constant that represents an integer value for the rank*/
    
    //the rank and suit for the particular card being created
+   /**stores the card's suit*/
    private int suit;
+   /**stores the card's rank*/
    private int rank;
    
+   /**
+   Creates a card with a suit and a rank.
+   @param cardSuit a suit numbered 1-4, corresponding to Spades, clubs, hearts, and diamonds.
+   @param cardRank a rank numbered 1-13, corresponding to ace, 1-10, Jack, Queen, and King.
+   */
    public Card(int cardSuit, int cardRank)
    {
       //assign a suit and rank to the card upon creation
@@ -29,17 +48,17 @@ public class Card
       rank = cardRank;
    }
    
-   //getSuit returns the corresponding suit integer
+   /**returns card's suit as an integer*/
    public int getSuit()
    {
       return suit;
    }
-   //getRank returns the card's rank
+   /**returns the card's rank as an integer*/
    public int getRank()
    {
       return rank;
    }
-   //to string returns the card's name as a string
+   /** returns the card's name as a string in the form RANK OF SUIT*/
    public String toString()
    {
       String suitName;
@@ -97,7 +116,8 @@ public class Card
    
    
    
-   //equals checks to see if two card objects are equal
+   /** Compares toString method of two card objects to see if they are equal
+   @param otherCard A second card object to compare to.*/
    public boolean equals(Card otherCard)
    {
       if (this.toString().equals(otherCard.toString()))
@@ -110,6 +130,7 @@ public class Card
       }
    }
    
+   /**gets the card name as a file name in the form cardPics/RANKSUIT.jpg*/
    public String getImage()
    {
       String suitName;
@@ -160,6 +181,6 @@ public class Card
       }
       
       //return the name as a string
-      return (suitName + rankName);
+      return ("cardPics/" + rankName + suitName + ".jpg");
    }
 }

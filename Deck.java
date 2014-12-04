@@ -5,8 +5,10 @@ Deck creates a CardPile with one of each standard
 
 import java.util.Random;
 
+/**A card pile that starts with all standard 52 cards and then shuffles them.*/
 public class Deck extends CardPile
 {
+   /**Creates each unique card in a standard deck and then shuffles them*/
    public Deck()
    {
       for(int i = 1; i<=4; i++)
@@ -22,9 +24,10 @@ public class Deck extends CardPile
    
    }
    
+   /**Simulates shuffling by moving a random card to the end of the deck.*/
    public void shuffle()
    {
-      for (int i = 0; i < 10000; i++)
+      for (int i = 0; i < 2000; i++)
       {
       Random rand = new Random();
       int randNum = rand.nextInt(52);
